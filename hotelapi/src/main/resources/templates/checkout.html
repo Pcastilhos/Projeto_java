@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check-out</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">Início</a>
+        <a href="/tela/hoteis">Hotéis</a>
+        <a href="/tela/quartos">Quartos</a>
+        <a href="/tela/hospedes">Hóspedes</a>
+        <a href="/tela/funcionarios">Funcionários</a>
+        <a href="/tela/servicos">Serviços</a>
+        <a href="/tela/reservas">Reservas</a>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h1>Check-out da reserva {{ID}}</h1>
+            <p>Hóspede: {{HOSPEDE}}</p>
+
+            <!-- conferência dos serviços usados antes de finalizar -->
+            <pre>{{RESUMO}}</pre>
+
+            <form method="post" action="/tela/reservas/{{ID}}/checkout">
+                <button type="submit">Confirmar check-out</button>
+                <a href="/tela/reservas">Voltar</a>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

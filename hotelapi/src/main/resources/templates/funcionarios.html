@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionários</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">Início</a>
+        <a href="/tela/hoteis">Hotéis</a>
+        <a href="/tela/quartos">Quartos</a>
+        <a href="/tela/hospedes">Hóspedes</a>
+        <a href="/tela/funcionarios">Funcionários</a>
+        <a href="/tela/servicos">Serviços</a>
+        <a href="/tela/reservas">Reservas</a>
+    </header>
+
+    <main class="container">
+
+        <h1>Funcionários</h1>
+
+        {{MENSAGEM}}
+
+        <section class="card">
+            <h2>{{TITULO_FORM}}</h2>
+
+            <form method="post" action="/tela/funcionarios">
+                <input type="hidden" name="id" value="{{ID}}">
+
+                <div class="formulario">
+                    <label>Hotel</label>
+                    <select name="hotelId">{{OPCOES_HOTEIS}}</select>
+
+                    <label>Cargo</label>
+                    <select name="tipo">{{OPCOES_CARGO}}</select>
+
+                    <label>Nome</label>
+                    <input type="text" name="nome" value="{{NOME}}">
+
+                    <label>CPF</label>
+                    <input type="text" name="cpf" value="{{CPF}}">
+
+                    <label>Telefone</label>
+                    <input type="text" name="telefone" value="{{TELEFONE}}">
+
+                    <label>E-mail</label>
+                    <input type="text" name="email" value="{{EMAIL}}">
+
+                    <label>Salário base</label>
+                    <input type="text" name="salario" value="{{SALARIO}}">
+
+                    <label>Data de contratação</label>
+                    <input type="date" name="dataContratacao" value="{{CONTRATACAO}}">
+
+                    <label>Horário de entrada</label>
+                    <input type="time" name="horarioEntrada" value="{{ENTRADA}}">
+
+                    <label>Horário de saída</label>
+                    <input type="time" name="horarioSaida" value="{{SAIDA}}">
+
+                    <label>Férias: início</label>
+                    <input type="date" name="feriasInicio" value="{{FERIAS_INICIO}}">
+
+                    <label>Férias: fim</label>
+                    <input type="date" name="feriasFim" value="{{FERIAS_FIM}}">
+                </div>
+
+                <p>
+                    <button type="submit">Salvar</button>
+                    <a href="/tela/funcionarios">Limpar</a>
+                </p>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Funcionários cadastrados</h2>
+            <p>O "Salário final" muda conforme o cargo: Gerente +20%, Camareira +10%.</p>
+            {{LISTA}}
+        </section>
+
+    </main>
+
+</body>
+
+</html>

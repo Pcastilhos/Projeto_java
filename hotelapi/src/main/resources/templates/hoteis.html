@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotéis</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">Início</a>
+        <a href="/tela/hoteis">Hotéis</a>
+        <a href="/tela/quartos">Quartos</a>
+        <a href="/tela/hospedes">Hóspedes</a>
+        <a href="/tela/funcionarios">Funcionários</a>
+        <a href="/tela/servicos">Serviços</a>
+        <a href="/tela/reservas">Reservas</a>
+    </header>
+
+    <main class="container">
+
+        <h1>Hotéis</h1>
+
+        {{MENSAGEM}}
+
+        <section class="card">
+            <h2>{{TITULO_FORM}}</h2>
+
+            <form method="post" action="/tela/hoteis">
+                <input type="hidden" name="id" value="{{ID}}">
+
+                <div class="formulario">
+                    <label>Nome</label>
+                    <input type="text" name="nome" value="{{NOME}}">
+
+                    <label>Endereço</label>
+                    <input type="text" name="endereco" value="{{ENDERECO}}">
+
+                    <label>Cidade</label>
+                    <input type="text" name="cidade" value="{{CIDADE}}">
+
+                    <label>Telefone</label>
+                    <input type="text" name="telefone" value="{{TELEFONE}}">
+
+                    <label>Estrelas</label>
+                    <select name="estrelas">{{OPCOES_ESTRELAS}}</select>
+                </div>
+
+                <p>
+                    <button type="submit">Salvar</button>
+                    <a href="/tela/hoteis">Limpar</a>
+                </p>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Hotéis cadastrados</h2>
+            {{LISTA}}
+        </section>
+
+    </main>
+
+</body>
+
+</html>

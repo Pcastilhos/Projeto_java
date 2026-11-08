@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quartos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">Início</a>
+        <a href="/tela/hoteis">Hotéis</a>
+        <a href="/tela/quartos">Quartos</a>
+        <a href="/tela/hospedes">Hóspedes</a>
+        <a href="/tela/funcionarios">Funcionários</a>
+        <a href="/tela/servicos">Serviços</a>
+        <a href="/tela/reservas">Reservas</a>
+    </header>
+
+    <main class="container">
+
+        <h1>Quartos</h1>
+
+        {{MENSAGEM}}
+
+        <section class="card">
+            <h2>{{TITULO_FORM}}</h2>
+
+            <form method="post" action="/tela/quartos">
+                <input type="hidden" name="id" value="{{ID}}">
+
+                <div class="formulario">
+                    <label>Hotel</label>
+                    <select name="hotelId">{{OPCOES_HOTEIS}}</select>
+
+                    <label>Número</label>
+                    <input type="number" name="numero" value="{{NUMERO}}">
+
+                    <label>Tipo</label>
+                    <select name="tipo">{{OPCOES_TIPO}}</select>
+
+                    <label>Capacidade</label>
+                    <input type="number" name="capacidade" value="{{CAPACIDADE}}">
+
+                    <label>Valor da diária (base)</label>
+                    <input type="text" name="valorDiaria" value="{{VALOR}}">
+
+                    <label>Situação</label>
+                    <select name="situacao">{{OPCOES_SITUACAO}}</select>
+                </div>
+
+                <p>
+                    <button type="submit">Salvar</button>
+                    <a href="/tela/quartos">Limpar</a>
+                </p>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Quartos cadastrados</h2>
+            <p>A coluna "Diária final" muda conforme o tipo: Luxo +10%, Suíte +20%.</p>
+            {{LISTA}}
+        </section>
+
+    </main>
+
+</body>
+
+</html>

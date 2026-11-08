@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hóspedes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">Início</a>
+        <a href="/tela/hoteis">Hotéis</a>
+        <a href="/tela/quartos">Quartos</a>
+        <a href="/tela/hospedes">Hóspedes</a>
+        <a href="/tela/funcionarios">Funcionários</a>
+        <a href="/tela/servicos">Serviços</a>
+        <a href="/tela/reservas">Reservas</a>
+    </header>
+
+    <main class="container">
+
+        <h1>Hóspedes</h1>
+
+        {{MENSAGEM}}
+
+        <section class="card">
+            <h2>{{TITULO_FORM}}</h2>
+
+            <form method="post" action="/tela/hospedes">
+                <input type="hidden" name="id" value="{{ID}}">
+
+                <div class="formulario">
+                    <label>Nome</label>
+                    <input type="text" name="nome" value="{{NOME}}">
+
+                    <label>CPF (somente números)</label>
+                    <input type="text" name="cpf" value="{{CPF}}">
+
+                    <label>Data de nascimento</label>
+                    <input type="date" name="dataNascimento" value="{{NASCIMENTO}}">
+
+                    <label>Telefone</label>
+                    <input type="text" name="telefone" value="{{TELEFONE}}">
+
+                    <label>E-mail</label>
+                    <input type="text" name="email" value="{{EMAIL}}">
+                </div>
+
+                <p>
+                    <button type="submit">Salvar</button>
+                    <a href="/tela/hospedes">Limpar</a>
+                </p>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Hóspedes cadastrados</h2>
+
+            <form method="get" action="/tela/hospedes">
+                <label>Pesquisar por nome ou CPF:</label>
+                <input type="text" name="texto" value="{{TEXTO}}">
+                <button type="submit">Pesquisar</button>
+                <a href="/tela/hospedes">Mostrar todos</a>
+            </form>
+
+            {{LISTA}}
+        </section>
+
+    </main>
+
+</body>
+
+</html>

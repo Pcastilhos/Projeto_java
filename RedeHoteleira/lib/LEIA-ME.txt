@@ -1,0 +1,7 @@
+Coloque nesta pasta o arquivo do driver do MySQL com o nome:
+
+    mysql-connector-j.jar
+
+É o mesmo .jar usado no projeto da clínica veterinária (mysql-connector-j-XX.X.X.jar).
+Basta copiar para cá e renomear para mysql-connector-j.jar.
+Download: https://dev.mysql.com/downloads/connector/j/ (opção "Platform Independent")
